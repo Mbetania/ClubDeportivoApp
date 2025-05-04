@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ClubDeportivoApp</string>
+    <string name="usuario">Usuario</string>
+    <string name="club_deportivo_iniciar_sesion">Club Deportivo - Iniciar Sesion</string>
+    <string name="clave">Clave</string>
+    <string name="seleccionar_rol">Seleccionar Rol:</string>
+    <string name="recepcionista">Recepcionista</string>
+    <string name="admin">Admin</string>
+</resources>
