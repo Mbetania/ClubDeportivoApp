@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dashboard - Club Deportivo"
+        android:text="@string/dashboard_sport_club"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="32dp" />
@@ -18,34 +18,34 @@
         android:id="@+id/btnRegistrarSocio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Nuevo Socio"
+        android:text="@string/registrar_nuevo_socio"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnRegistrarPago"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar Pago o Editar Socio"
+        android:text="@string/registrar_pago"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnReporteVencimientos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reporte de Vencimientos"
+        android:text="@string/reporte_de_vencimientos"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnHistorialCobros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Historial de Cobros"
+        android:text="@string/historial_de_cobros"
         android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Socios con Cuota Atrasada:"
+        android:text="@string/socios_con_cuotas_atrasadas"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp" />
@@ -55,5 +55,4 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-
 </LinearLayout>

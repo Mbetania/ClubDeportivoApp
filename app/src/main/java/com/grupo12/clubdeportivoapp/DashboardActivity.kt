@@ -1,7 +1,9 @@
 package com.grupo12.clubdeportivoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.grupo12.clubdeportivoapp.databinding.ActivityDashboardBinding
 
@@ -19,9 +21,8 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun setupOverdueMembersList() {
         val overdueMembers = listOf(
-            "Socio 1 - Vence: 01/05/2025",
-            "Socio 2 - Vence: 02/05/2025",
-            "Socio 3 - Vence: 03/05/2025"
+            "Juan Pérez - Vence: 15/05/2023",
+            "María Gómez - Vence: 20/05/2023"
         )
 
         binding.lvCuotasAtrasadas.adapter = ArrayAdapter(
@@ -33,19 +34,19 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun setupButtonClickListeners() {
         binding.btnRegistrarSocio.setOnClickListener {
-            // Lógica para registrar socio
+            startActivity(Intent(this, AddSocioActivity::class.java))
         }
 
         binding.btnRegistrarPago.setOnClickListener {
-            // Lógica para registrar pago
+            Toast.makeText(this, "Registrar Pago", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnReporteVencimientos.setOnClickListener {
-            // Lógica para reportes
+            Toast.makeText(this, "Reporte de Vencimientos", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnHistorialCobros.setOnClickListener {
-            // Lógica para historial
+            Toast.makeText(this, "Historial de Cobros", Toast.LENGTH_SHORT).show()
         }
     }
 }

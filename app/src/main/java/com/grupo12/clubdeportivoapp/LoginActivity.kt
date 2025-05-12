@@ -2,6 +2,7 @@ package com.grupo12.clubdeportivoapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -9,6 +10,7 @@ import com.grupo12.clubdeportivoapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private val TAG = "LoginActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,29 +19,36 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupLoginButton()
+        setupForgotPassword()
     }
 
     private fun setupLoginButton() {
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
-            val isReceptionist = binding.rbRecepcionista.isChecked
 
-            if (validateCredentials(username, password, isReceptionist)) {
+            if (validateCredentials(username, password)) {
                 navigateToDashboard()
             } else {
-                showError("Usuario, contraseña o rol incorrectos")
+                showError("Usuario o contraseña incorrectos")
             }
         }
     }
 
-    private fun validateCredentials(username: String, password: String, isReceptionist: Boolean): Boolean {
-        return username == "recepcionista" && password == "1234" && isReceptionist
+    private fun setupForgotPassword() {
+        binding.tvForgotPassword.setOnClickListener {
+            Log.d(TAG, "Forgot Password clicked")
+            Toast.makeText(this, "Funcionalidad en desarrollo", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun validateCredentials(username: String, password: String): Boolean {
+        return username == "recepcionista" && password == "1234"
     }
 
     private fun showError(message: String) {
         binding.tvError.text = message
-        binding.tvError.visibility = TextView.VISIBLE
+        binding.tvError.visibility = android.widget.TextView.VISIBLE
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 

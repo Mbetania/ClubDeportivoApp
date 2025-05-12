@@ -2,8 +2,14 @@
     <string name="app_name">ClubDeportivoApp</string>
     <string name="usuario">Usuario</string>
     <string name="club_deportivo_iniciar_sesion">Club Deportivo - Iniciar Sesion</string>
-    <string name="clave">Clave</string>
-    <string name="seleccionar_rol">Seleccionar Rol:</string>
-    <string name="recepcionista">Recepcionista</string>
-    <string name="admin">Admin</string>
+    <string name="sport_club">Sport Club</string>
+    <string name="clave">Contraseña</string>
+    <string name="forgot_password">Olvidó su contraseña?</string>
+    <string name="sing_in">Iniciar Sesión</string>
+    <string name="dashboard_sport_club">Dashboard - Sport Club</string>
+    <string name="registrar_nuevo_socio">Registrar Nuevo Socio</string>
+    <string name="registrar_pago">Registrar Pago</string>
+    <string name="reporte_de_vencimientos">Reporte de Vencimientos</string>
+    <string name="historial_de_cobros">Historial de Cobros</string>
+    <string name="socios_con_cuotas_atrasadas">Socios con cuotas atrasadas:</string>
 </resources>
