@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Encabezado con botón de texto "Volver" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:textColor="#6200EE"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrar Nuevo Socio"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Formulario -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Campo Nombre -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el nombre"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo Apellido -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apellido"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el apellido"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo DNI -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DNI"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etDni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el DNI"
+                android:inputType="number"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo Teléfono -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teléfono"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el teléfono"
+                android:inputType="phone"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Botón Registrar -->
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar Socio"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
