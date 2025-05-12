@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,6 @@
     android:gravity="center"
     android:background="#F5F5F5">
 
-    <!-- Título principal -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,6 @@
             android:padding="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo Contraseña -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +63,6 @@
             android:padding="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Enlace "Olvidé mi contraseña" -->
     <TextView
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
@@ -79,7 +77,6 @@
         android:focusable="true"
         android:clickable="true" />
 
-    <!-- Botón de Inicio de Sesión -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
@@ -91,7 +88,6 @@
         android:textSize="16sp"
         android:stateListAnimator="@null" />
 
-    <!-- Mensaje de error -->
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"

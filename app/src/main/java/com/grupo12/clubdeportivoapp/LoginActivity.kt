@@ -3,6 +3,7 @@ package com.grupo12.clubdeportivoapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -10,7 +11,7 @@ import com.grupo12.clubdeportivoapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val TAG = "LoginActivity"
+    private val tag = "LoginActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +31,14 @@ class LoginActivity : AppCompatActivity() {
             if (validateCredentials(username, password)) {
                 navigateToDashboard()
             } else {
-                showError("Usuario o contraseña incorrectos")
+                showError() // Usa el valor por defecto
             }
         }
     }
 
     private fun setupForgotPassword() {
         binding.tvForgotPassword.setOnClickListener {
-            Log.d(TAG, "Forgot Password clicked")
+            Log.d(tag, "Forgot Password clicked")
             Toast.makeText(this, "Funcionalidad en desarrollo", Toast.LENGTH_SHORT).show()
         }
     }
@@ -46,9 +47,9 @@ class LoginActivity : AppCompatActivity() {
         return username == "recepcionista" && password == "1234"
     }
 
-    private fun showError(message: String) {
+    private fun showError(message: String = getString(R.string.error_login_default)) {
         binding.tvError.text = message
-        binding.tvError.visibility = android.widget.TextView.VISIBLE
+        binding.tvError.visibility = View.VISIBLE
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 

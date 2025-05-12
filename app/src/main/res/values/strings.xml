@@ -12,4 +12,5 @@
     <string name="reporte_de_vencimientos">Reporte de Vencimientos</string>
     <string name="historial_de_cobros">Historial de Cobros</string>
     <string name="socios_con_cuotas_atrasadas">Socios con cuotas atrasadas:</string>
+    <string name="error_login_default">Usuario o contraseña incorrectos</string>
 </resources>
