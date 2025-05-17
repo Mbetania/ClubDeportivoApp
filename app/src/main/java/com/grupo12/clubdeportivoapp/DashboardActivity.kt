@@ -15,30 +15,18 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupOverdueMembersList()
-        setupButtonClickListeners()
-    }
-
-    private fun setupOverdueMembersList() {
-        val overdueMembers = listOf(
-            "Juan Pérez - Vence: 15/05/2023",
-            "María Gómez - Vence: 20/05/2023"
-        )
-
         binding.lvCuotasAtrasadas.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            overdueMembers
+            listOf("Juan Pérez - Vence: 15/05/2023", "María Gómez - Vence: 20/05/2023")
         )
-    }
 
-    private fun setupButtonClickListeners() {
         binding.btnRegistrarSocio.setOnClickListener {
             startActivity(Intent(this, AddSocioActivity::class.java))
         }
 
         binding.btnRegistrarPago.setOnClickListener {
-            Toast.makeText(this, "Registrar Pago", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, FindSocio::class.java))
         }
 
         binding.btnReporteVencimientos.setOnClickListener {

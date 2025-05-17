@@ -13,29 +13,24 @@ class AddSocioActivity : AppCompatActivity() {
         binding = ActivityAddSocioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupBackButton()
-        setupRegisterButton()
-    }
-
-    private fun setupBackButton() {
         binding.btnBack.setOnClickListener {
             finish()
         }
-    }
 
-    private fun setupRegisterButton() {
         binding.btnRegistrar.setOnClickListener {
-            val nombre = binding.etNombre.text.toString()
-            val apellido = binding.etApellido.text.toString()
-            val dni = binding.etDni.text.toString()
-            val telefono = binding.etTelefono.text.toString()
-
-            if (nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || telefono.isEmpty()) {
-                Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Socio registrado: $nombre $apellido", Toast.LENGTH_SHORT).show()
+            if (validateForm()) {
+                Toast.makeText(this, "Socio registrado", Toast.LENGTH_SHORT).show()
                 finish()
+            } else {
+                Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun validateForm(): Boolean {
+        return binding.etNombre.text.toString().isNotEmpty() &&
+                binding.etApellido.text.toString().isNotEmpty() &&
+                binding.etDni.text.toString().isNotEmpty() &&
+                binding.etTelefono.text.toString().isNotEmpty()
     }
 }

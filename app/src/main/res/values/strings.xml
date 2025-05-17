@@ -13,4 +13,39 @@
     <string name="historial_de_cobros">Historial de Cobros</string>
     <string name="socios_con_cuotas_atrasadas">Socios con cuotas atrasadas:</string>
     <string name="error_login_default">Usuario o contraseña incorrectos</string>
+    <string name="buscar_socio">Buscar Socio</string>
+    <string name="filtrar_buscar">Filtrar/Buscar Socio</string>
+    <string name="resultados">Resultados</string>
+    <string name="buscar">Buscar</string>
+    <string name="perfil_socio">Perfil de Socio</string>
+    <string name="contacto">Contacto</string>
+    <string name="editar">Editar</string>
+    <string name="datos_personales">Datos Personales</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="asociado">Asociado</string>
+    <string name="no_asociado">No Asociado</string>
+    <string name="vencimiento">Vencimiento</string>
+    <string name="ver_clases">Ver Clases</string>
+    <string name="guardar">Guardar</string>
+    <string name="registrar_pago_title">Registrar Pago</string>
+    <string name="deuda">Deuda</string>
+    <string name="al_dia">Al día</string>
+    <string name="monto_pagar">Monto a Pagar</string>
+    <string name="tipo_pago">Tipo de Pago</string>
+    <string name="debito">Débito</string>
+    <string name="credito">Crédito</string>
+    <string name="efectivo">Efectivo</string>
+    <string name="billetera">Billetera Virtual</string>
+    <string name="ultimos_pagos">Últimos Pagos</string>
+    <string name="editado_correctamente">Editado correctamente</string>
+    <string name="mantenimiento_titulo">¡Lo sentimos!</string>
+    <string name="error_empty_search">Ingrese un nombre o DNI para buscar</string>
+    <string name="no_results_found">No se encontraron resultados</string>
+    <string name="codigo_acceso_directo" translatable="false">11111</string>
+    <string-array name="tipos_pago">
+        <item>Efectivo</item>
+        <item>Tarjeta</item>
+        <item>Transferencia</item>
+    </string-array>
+    <string name="mantenimiento_mensaje">Estamos realizando mejoras en esta sección. Por favor, inténtalo nuevamente más tarde.</string>
 </resources>
