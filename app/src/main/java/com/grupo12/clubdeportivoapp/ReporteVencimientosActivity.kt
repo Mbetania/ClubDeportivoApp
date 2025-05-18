@@ -1,56 +1,72 @@
 package com.grupo12.clubdeportivoapp
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Button
-import android.widget.Toast
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.grupo12.clubdeportivoapp.databinding.ActivityReporteVencimientosBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ReporteVencimientosActivity : AppCompatActivity() {
-
-    private lateinit var rvUsuarios: RecyclerView
-    private lateinit var btnBack: Button
-    private lateinit var btnGenerarPdf: Button
+    private lateinit var binding: ActivityReporteVencimientosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reporte_vencimientos)
+        binding = ActivityReporteVencimientosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        rvUsuarios = findViewById(R.id.rvUsuariosVencidos)
-        btnBack = findViewById(R.id.btnBack)
-        btnGenerarPdf = findViewById(R.id.btnGenerarPdf)
-
-        btnBack.setOnClickListener {
+        binding.btnBack.setOnClickListener {
             finish()
         }
 
-        btnGenerarPdf.setOnClickListener {
-            val dialog = AlertDialog.Builder(this)
-                .setMessage("Generando archivo PDF...")
-                .setCancelable(false)
-                .create()
-            dialog.show()
-
-            Handler(Looper.getMainLooper()).postDelayed({
-                dialog.dismiss()
-                Toast.makeText(this, "PDF generado correctamente", Toast.LENGTH_SHORT).show()
-            }, 2000) // 2 segundos
+        binding.btnDescargarReporte.setOnClickListener {
+            showReporteGeneradoDialog()
         }
 
-        // Dummy data: lista simple de strings con nombres
-        val usuariosDummy = listOf(
-            "Juan Pérez",
-            "María Gómez",
-            "Carlos Rodríguez",
-            "Lucía Fernández",
-            "Diego Martínez"
+        val usuariosVencidos = listOf(
+            "Juan Pérez - Vence: 18/05/2025",
+            "María Gómez - Vence: 18/05/2025"
         )
-
-        rvUsuarios.layoutManager = LinearLayoutManager(this)
-        rvUsuarios.adapter = SimpleStringAdapter(usuariosDummy)
+        binding.rvUsuariosVencidos.layoutManager = LinearLayoutManager(this)
+        binding.rvUsuariosVencidos.adapter = VencimientosAdapter(usuariosVencidos)
     }
+    private fun showReporteGeneradoDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_reporte_generado, null)
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
+
+        val currentDate = SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())
+        dialogView.findViewById<TextView>(R.id.tv_nombre_archivo).text = "reporte_vencimientos-$currentDate.pdf"
+
+        dialogView.findViewById<Button>(R.id.btn_cerrar).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+}
+
+class VencimientosAdapter(private val usuarios: List<String>) :
+    androidx.recyclerview.widget.RecyclerView.Adapter<VencimientosAdapter.ViewHolder>() {
+
+    class ViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+        val textView: android.widget.TextView = itemView.findViewById(android.R.id.text1)
+    }
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): ViewHolder {
+        val view = android.view.LayoutInflater.from(parent.context)
+            .inflate(android.R.layout.simple_list_item_1, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.textView.text = usuarios[position]
+    }
+
+    override fun getItemCount(): Int = usuarios.size
 }
