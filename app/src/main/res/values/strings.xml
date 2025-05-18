@@ -13,6 +13,8 @@
     <string name="historial_de_cobros">Historial de Cobros</string>
     <string name="socios_con_cuotas_atrasadas">Socios con cuotas atrasadas:</string>
     <string name="error_login_default">Usuario o contraseña incorrectos</string>
+    <string name="editar_socio">Editar Socio</string>
+
     <string name="buscar_socio">Buscar Socio</string>
     <string name="filtrar_buscar">Filtrar/Buscar Socio</string>
     <string name="resultados">Resultados</string>
