@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".HistorialPagosSocioActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:layout_marginBottom="24dp"/>
+        <!-- Subtítulo Historial de Pagos -->
+        <TextView
+            android:id="@+id/tv_subtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Historial de Pagos"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titulo" />
+        <!-- Listado de Pagos -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_historial_pagos"
+            android:layout_width="379dp"
+            android:layout_height="439dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_descargar_reporte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitulo" />
+
+        <!-- Botón Descargar Reporte -->
+        <Button
+            android:id="@+id/btn_descargar_reporte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Descargar Reporte en PDF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

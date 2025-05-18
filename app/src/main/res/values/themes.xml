@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Tema base -->
-    <style name="Theme.ClubDeportivoApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- Tema base sin ActionBar -->
+    <style name="Theme.ClubDeportivoApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -9,6 +9,13 @@
         <item name="colorSecondaryVariant">@color/accent_color</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Tema para Splash Screen -->
+    <style name="SplashTheme" parent="Theme.ClubDeportivoApp">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <!-- Estilos de texto -->

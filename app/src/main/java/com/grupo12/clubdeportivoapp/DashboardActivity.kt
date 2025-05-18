@@ -25,6 +25,10 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, AddSocioActivity::class.java))
         }
 
+        binding.btnEditarSocio.setOnClickListener {
+            startActivity(Intent(this, EditarSocioActivity::class.java))
+        }
+
         binding.btnRegistrarPago.setOnClickListener {
             startActivity(Intent(this, FindSocio::class.java))
         }
@@ -34,7 +38,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.btnHistorialCobros.setOnClickListener {
-            Toast.makeText(this, "Historial de Cobros", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HistorialPagosSocioActivity::class.java))
         }
     }
 }

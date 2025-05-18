@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Splash : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     companion object {
         const val TIEMPO_CARGA = 3000L
     }
