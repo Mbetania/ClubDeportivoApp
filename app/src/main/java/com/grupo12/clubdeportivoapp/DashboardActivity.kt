@@ -3,7 +3,6 @@ package com.grupo12.clubdeportivoapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.grupo12.clubdeportivoapp.databinding.ActivityDashboardBinding
 
@@ -34,7 +33,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.btnReporteVencimientos.setOnClickListener {
-            Toast.makeText(this, "Reporte de Vencimientos", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ReporteVencimientosActivity::class.java))
         }
 
         binding.btnHistorialCobros.setOnClickListener {
