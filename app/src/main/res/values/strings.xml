@@ -55,6 +55,14 @@
     <string name="detalle_pago_placeholder">Pago $999.99 - Método</string>
     <string name="fecha_placeholder">01/01/2025</string>
     <string name="detalle_pago">pagó %1$s - %2$s</string>
-
+    <string name="volver">Volver</string>
+    <string name="reporte_vencimientos_cuotas">Reporte de Vencimientos de Cuotas</string>
+    <string name="descargar_reporte_pdf">Descargar Reporte en PDF</string>
+    <string name="vencimiento_placeholder">Cuota vencida $x.xx</string>
+    <string name="detalle_vencimiento">Cuota vencida %1$s</string>
+    <string name="registro_generado">Registro generado</string>
+    <string name="nombre_archivo_placeholder">reporte_vencimientos-fecha.pdf</string>
+    <string name="leyenda_reporte">Encontrará el reporte en sus archivos</string>
+    <string name="cerrar">Cerrar</string>
 
 </resources>
