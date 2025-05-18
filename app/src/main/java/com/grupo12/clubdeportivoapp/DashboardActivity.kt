@@ -3,7 +3,6 @@ package com.grupo12.clubdeportivoapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.grupo12.clubdeportivoapp.databinding.ActivityDashboardBinding
 
@@ -25,16 +24,20 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, AddSocioActivity::class.java))
         }
 
+        binding.btnEditarSocio.setOnClickListener {
+            startActivity(Intent(this, FindSocio::class.java))
+        }
+
         binding.btnRegistrarPago.setOnClickListener {
             startActivity(Intent(this, FindSocio::class.java))
         }
 
         binding.btnReporteVencimientos.setOnClickListener {
-            Toast.makeText(this, "Reporte de Vencimientos", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ReporteVencimientosActivity::class.java))
         }
 
         binding.btnHistorialCobros.setOnClickListener {
-            Toast.makeText(this, "Historial de Cobros", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HistorialPagosSocioActivity::class.java))
         }
     }
 }
