@@ -25,7 +25,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.btnEditarSocio.setOnClickListener {
-            startActivity(Intent(this, EditarSocioActivity::class.java))
+            startActivity(Intent(this, FindSocio::class.java))
         }
 
         binding.btnRegistrarPago.setOnClickListener {
