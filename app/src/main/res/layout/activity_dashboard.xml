@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
-    android:fitsSystemWindows="true">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="?android:attr/statusBarColor" />
+    android:fitsSystemWindows="false">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="24dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="40dp">
+        android:padding="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,51 +22,51 @@
                 android:id="@+id/btnRegistrarSocio"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/registrar_nuevo_socio"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/primary_color"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"/>
+                android:text="@string/registrar_nuevo_socio"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnRegistrarPago"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/registrar_pago"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/primary_color"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"/>
+                android:text="@string/registrar_pago"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnReporteVencimientos"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/reporte_de_vencimientos"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/primary_color"
-                android:textColor="@color/white"
-                android:layout_marginBottom="16dp"/>
+                android:text="@string/reporte_de_vencimientos"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnHistorialCobros"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/historial_de_cobros"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/primary_color"
-                android:textColor="@color/white"
-                android:layout_marginBottom="24dp"/>
+                android:text="@string/historial_de_cobros"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/socios_con_cuotas_atrasadas"
-                android:textColor="@color/primary_text"
-                android:layout_marginBottom="8dp"/>
+                android:textColor="@color/primary_text" />
 
             <ListView
                 android:id="@+id/lvCuotasAtrasadas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:divider="@color/divider_color"
-                android:dividerHeight="1dp"/>
+                android:dividerHeight="1dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

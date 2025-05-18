@@ -48,4 +48,6 @@
         <item>Transferencia</item>
     </string-array>
     <string name="mantenimiento_mensaje">Estamos realizando mejoras en esta sección. Por favor, inténtalo nuevamente más tarde.</string>
+    <string name="app_logo_description">App logo</string>
+    <string name="bienvenido">Bienvenida/o</string>
 </resources>
