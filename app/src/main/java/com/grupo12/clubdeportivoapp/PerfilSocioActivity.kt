@@ -14,36 +14,55 @@ class PerfilSocioActivity : AppCompatActivity() {
         binding = ActivityPerfilSocioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val socio = intent.getSerializableExtra("socio") as? Socio ?: run {
-            finish()
-            return
-        }
+        // Socio hardcodeado con todos los campos requeridos
+        val socioHardcodeado = Socio(
+            nombre = "Juan",
+            apellido = "Pérez",
+            dni = "12345678",
+            telefono = "555-1234",
+            email = "juan.perez@example.com",
+            fechaNacimiento = "01/01/1980",
+            asociado = true,
+            vencimiento = "31/12/2023"
+        )
 
         with(binding) {
-            btnBack.setOnClickListener { finish() }
+            // Botón Atrás
+            btnBack.setOnClickListener {
+                finish()
+            }
+
+            // Botón Editar
             btnEditar.setOnClickListener {
                 mostrarMensaje("Funcionalidad de edición en desarrollo")
             }
+
+            // Botón Ver Clases - Navega a MantenimientoActivity
             btnVerClases.setOnClickListener {
                 startActivity(Intent(this@PerfilSocioActivity, MantenimientoActivity::class.java))
             }
+
+            // Botón Guardar - Muestra mensaje de éxito
             btnGuardar.setOnClickListener {
                 Toast.makeText(
                     this@PerfilSocioActivity,
-                    R.string.editado_correctamente,
+                    "Actualizado con éxito",
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
+            // Botón Registrar Pago - Navega a RegistrarPagoActivity
             btnRegistrarPago.setOnClickListener {
                 startActivity(
                     Intent(this@PerfilSocioActivity, RegistrarPagoActivity::class.java).apply {
-                        putExtra("socio", socio)
+                        putExtra("socio", socioHardcodeado)
                     }
                 )
             }
 
-            tvNombre.text = "${socio.nombre} ${socio.apellido}"
-            tvDni.text = "DNI: ${socio.dni}"
+            // Mostrar datos del socio
+            tvNombre.text = "${socioHardcodeado.nombre} ${socioHardcodeado.apellido}"
+            tvDni.text = "DNI: ${socioHardcodeado.dni}"
         }
     }
 

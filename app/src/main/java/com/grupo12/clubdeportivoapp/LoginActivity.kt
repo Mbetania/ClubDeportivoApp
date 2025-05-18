@@ -36,12 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.btnLogin.setOnClickListener {
-            if (validateCredentials()) {
                 startActivity(Intent(this, DashboardActivity::class.java))
-            } else {
-                binding.tvError.visibility = View.VISIBLE
-                Toast.makeText(this, R.string.error_login_default, Toast.LENGTH_SHORT).show()
-            }
         }
 
         binding.tvForgotPassword.setOnClickListener {

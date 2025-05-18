@@ -19,17 +19,14 @@ class ReporteVencimientosActivity : AppCompatActivity() {
         binding = ActivityReporteVencimientosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Botón Volver
         binding.btnBack.setOnClickListener {
             finish()
         }
 
-        // Botón Descargar Reporte (mostrar modal)
         binding.btnDescargarReporte.setOnClickListener {
             showReporteGeneradoDialog()
         }
 
-        // Configurar RecyclerView con datos de ejemplo
         val usuariosVencidos = listOf(
             "Juan Pérez - Vence: 18/05/2025",
             "María Gómez - Vence: 18/05/2025"
@@ -43,11 +40,9 @@ class ReporteVencimientosActivity : AppCompatActivity() {
             .setView(dialogView)
             .create()
 
-        // Configurar nombre del archivo con fecha actual
         val currentDate = SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())
         dialogView.findViewById<TextView>(R.id.tv_nombre_archivo).text = "reporte_vencimientos-$currentDate.pdf"
 
-        // Botón Cerrar
         dialogView.findViewById<Button>(R.id.btn_cerrar).setOnClickListener {
             dialog.dismiss()
         }
@@ -56,7 +51,6 @@ class ReporteVencimientosActivity : AppCompatActivity() {
     }
 }
 
-// Adapter para RecyclerView
 class VencimientosAdapter(private val usuarios: List<String>) :
     androidx.recyclerview.widget.RecyclerView.Adapter<VencimientosAdapter.ViewHolder>() {
 

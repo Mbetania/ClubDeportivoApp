@@ -1,5 +1,6 @@
 package com.grupo12.clubdeportivoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -16,15 +17,18 @@ class RegistrarPagoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupViews()
-        loadInitialData()
     }
 
     private fun setupViews() {
-        // Configurar datos del socio
-        binding.tvNombre.text = intent.getStringExtra("nombre_socio") ?: "Socio no especificado"
-        binding.tvDni.text = "DNI: ${intent.getStringExtra("dni_socio") ?: "--"}"
+        val socio = intent.getSerializableExtra("socio") as? Socio ?: run {
+            startActivity(Intent(this, FindSocio::class.java))
+            finish()
+            return
+        }
 
-        // Configurar spinner
+        binding.tvNombre.text = socio.nombre
+        binding.tvDni.text = "DNI: ${socio.dni}"
+
         binding.spTipoPago.adapter = ArrayAdapter.createFromResource(
             this,
             R.array.tipos_pago,
@@ -43,10 +47,6 @@ class RegistrarPagoActivity : AppCompatActivity() {
                 registrarPago(monto)
             }
         }
-    }
-
-    private fun loadInitialData() {
-        // Puedes inicializar datos adicionales aquí si es necesario
     }
 
     private fun registrarPago(monto: String) {

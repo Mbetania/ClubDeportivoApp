@@ -49,6 +49,9 @@
         <activity
             android:name=".RegistrarPagoActivity"
             android:exported="false" />
+        <activity
+            android:name=".MantenimientoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
