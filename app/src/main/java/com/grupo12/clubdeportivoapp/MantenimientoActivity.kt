@@ -12,6 +12,8 @@ class MantenimientoActivity : AppCompatActivity() {
         binding = ActivityMantenimientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvVolver.setOnClickListener { finish() }
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 }

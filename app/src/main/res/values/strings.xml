@@ -64,6 +64,8 @@
     <string name="registro_generado">Registro generado</string>
     <string name="nombre_archivo_placeholder">reporte_vencimientos-fecha.pdf</string>
     <string name="leyenda_reporte">Encontrará el reporte en sus archivos</string>
+    <string name="leyenda_guardar">Los datos fueron guardados</string>
+
     <string name="cerrar">Cerrar</string>
 
 </resources>

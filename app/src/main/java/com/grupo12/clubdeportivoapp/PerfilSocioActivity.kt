@@ -3,6 +3,7 @@ package com.grupo12.clubdeportivoapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.grupo12.clubdeportivoapp.databinding.ActivityPerfilSocioBinding
 
@@ -42,13 +43,9 @@ class PerfilSocioActivity : AppCompatActivity() {
                 startActivity(Intent(this@PerfilSocioActivity, MantenimientoActivity::class.java))
             }
 
-            // Botón Guardar - Muestra mensaje de éxito
+            // Botón Guardar
             btnGuardar.setOnClickListener {
-                Toast.makeText(
-                    this@PerfilSocioActivity,
-                    "Actualizado con éxito",
-                    Toast.LENGTH_SHORT
-                ).show()
+                showDatosGuardadosDialog()
             }
 
             // Botón Registrar Pago - Navega a RegistrarPagoActivity
@@ -64,6 +61,19 @@ class PerfilSocioActivity : AppCompatActivity() {
             tvNombre.text = "${socioHardcodeado.nombre} ${socioHardcodeado.apellido}"
             tvDni.text = "DNI: ${socioHardcodeado.dni}"
         }
+    }
+
+    private fun showDatosGuardadosDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_guardar_ok, null)
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
+
+        dialogView.findViewById<android.widget.Button>(R.id.btn_cerrar).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun mostrarMensaje(mensaje: String) {
